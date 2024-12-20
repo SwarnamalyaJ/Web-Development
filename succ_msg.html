@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Chronic Kidney Disease </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Customer_Age:{{data_ca}}</p>
+      <p>Gender:{{data_gd}}</p>
+      <p>Education_Level:{{data_el}}</p>
+      <p>Income_Category:{{data_ict}}</p>
+      <p>Card_Category:{{data_cc}}</p>
+      <p>Credit_Limit:{{data_cl}}</p>
+      <p>Total_Trans_Amt:{{data_tta}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>You <b>will have</b>  chronic Kidney Disease in the future: <b>Positive</b></p>
+      {% else %}
+        <p>You <b>will not</b> have  chronic Kidney Disease in the future:<b>Negetive</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'ckdApp:ckd' %}">CKD Predicition</a>
+    <br>
+</div>
+{% endblock %}
