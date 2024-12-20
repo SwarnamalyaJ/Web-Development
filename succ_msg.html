@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Bank Churning Prediction </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Customer_Age:{{data_ca}}</p>
+      <p>Gender:{{data_gd}}</p>
+      <p>Education_Level:{{data_el}}</p>
+      <p>Income_Category:{{data_ict}}</p>
+      <p>Card_Category:{{data_cc}}</p>
+      <p>Credit_Limit:{{data_cl}}</p>
+      <p>Total_Trans_Amt:{{data_tta}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>You <b>are</b>  eligible for loan: <b>Existing customer</b></p>
+      {% else %}
+        <p>You <b>are not</b> eligible for loan:<b>Attrited customer</b></p>
+
+      {% endif %}
+
+    <a  href="{% url 'ckdApp:ckd' %}">Loan Predicition</a>
+    <br>
+</div>
+{% endblock %}
